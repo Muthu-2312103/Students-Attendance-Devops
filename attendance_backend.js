@@ -1,14 +1,13 @@
- const attendanceList = [];
+    const attendanceList = [];
 
     function markAttendance(name) {
       attendanceList.push(name);
       console.log(`${name} is marked present.`);
     }
 
-    document.getElementById('attendanceForm').addEventListener('submit', function(event) {
+    document.getElementById("attendanceForm").addEventListener("submit", function (event) {
       event.preventDefault();
-      const studentInput = document.getElementById('student');
-      const studentName = studentInput.value.trim();
+      const studentName = this.studentName.value.trim();
 
       if (studentName) {
         markAttendance(studentName);
