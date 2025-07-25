@@ -1,18 +1,20 @@
- const attendanceList = [];
+const attendanceList = [];
 
-    function markAttendance(name) {
-      attendanceList.push(name);
-      console.log(`${name} is marked present.`);
-    }
+function markAttendance(name) {
+    attendanceList.push(name); 
+    console.log(`${name} is marked present.`);
+}
 
-    document.getElementById('attendanceForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const studentInput = document.getElementById('student');
-      const studentName = studentInput.value.trim();
-
-      if (studentName) {
+document.getElementById("attendanceForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    const studentName = this.student.value.trim();
+    
+    if (studentName) {
         markAttendance(studentName);
         alert(`${studentName} attendance marked!`);
-        this.reset();
-      }
-    });
+        this.reset();  
+    } else {
+        alert("Please enter a student name.");
+    }
+});
